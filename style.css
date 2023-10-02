@@ -1,0 +1,130 @@
+:root{
+    --color:aliceblue ;
+    }
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color);
+}
+.container{
+    width: 100vw;
+    height: 40vh;
+    margin: 10vh auto;
+    position: relative;   
+    justify-content: center;
+}
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+.svg-container{
+    /* margin-left: -2px ; */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+#overlay::after{
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    width: 50%;
+    border-bottom: 3px solid orange ;
+
+}
+#overlay::before{
+    content: "Frontend Developer";
+    position: absolute;
+    background: var(--color);
+    color: orange;
+    bottom: -180px;
+    z-index: 10;
+    font-family: forte;
+    padding: 0 20px;
+    font-size: 40pt ;
+}
+.svg{
+    position: relative;
+    z-index: 100;
+    left: 0;
+    fill: var(--color);
+    background-color: rgba(0, 0, 0,.1);
+}
+
+.waves{
+    width: 100%;
+    height: 100%;
+}
+
+.svg-waves {
+    width: 100%;
+    height: 70%;
+    fill: orange;
+}
+.svg-waves:nth-child(2){
+    margin-top: -5px;
+    transform: rotate(180deg);
+}
+.svg-waves__parallax > use {
+    height: 100%;
+    -webkit-animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+
+    transition: all var(--transition-smooth) ease;
+}
+
+.svg-waves__parallax > use:nth-child(1) {
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+    -webkit-animation-duration: 7s;
+    animation-duration: 7s;
+    /* fill: rgba(255, 255, 255, 0.7); */
+    opacity: 0.8;
+}
+.svg-waves__parallax > use:nth-child(2) {
+    -webkit-animation-delay: -3s;
+    animation-delay: -3s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    /* fill: rgba(255, 255, 255, 0.5); */
+    opacity: 0.5;
+}
+.svg-waves__parallax > use:nth-child(3) {
+    -webkit-animation-delay: -4s;
+    animation-delay: -4s;
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+    opacity: 0.2;
+    /* fill: rgba(255, 255, 255, 0.3); */
+}
+.svg-waves__parallax > use:nth-child(4) {
+    -webkit-animation-delay: -5s;
+    animation-delay: -5s;
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+}
+
+@-webkit-keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
